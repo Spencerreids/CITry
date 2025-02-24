@@ -28,7 +28,7 @@ jobs:
           curl https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar -o lib/serverlet.jar
           curl https://repo1.maven.org/maven2/org/jfree/jcommon/1.0.17/jcommon-1.0.17.jar -o lib/jfree.jar
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar -o lib/junit-platform-console-standalone-1.11.4.jar 
-          javac -d bin -cp bin:lib/junit-platform-console-standalone-1.11.4.jar $(find src/ -name "*.java")
+          javac -d bin -cp bin:lib/junit-platform-console-standalone-1.11.4.jar $(find test/ -name "*.java")
           javac -d bin/ src/*
            
           ls -R
