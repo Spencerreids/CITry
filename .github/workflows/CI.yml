@@ -32,7 +32,7 @@ jobs:
           javac -d bin/ -cp lib/jfree.jar:lib/serverlet.jar src/org/jfree/data/Range.java
           ls bin
           java -version
-          javac -d bin -cp bin/Range.class:lib/junit-platform-console-standalone-1.11.4.jar test/range/ToStringTest.java
+          javac -d bin -cp bin/*:lib/junit-platform-console-standalone-1.11.4.jar test/range/ToStringTest.java
           ls bin
           
            
