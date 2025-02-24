@@ -31,6 +31,7 @@ jobs:
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar -o lib/junit-platform-console-standalone-1.11.4.jar 
           javac -d bin/ -cp lib/jfree.jar:lib/serverlet.jar src/Range.java
           ls bin
+          java -version
           javac -d bin -cp bin/Range.class:lib/junit-platform-console-standalone-1.11.4.jar test/ToStringTest.java
           ls bin
           
