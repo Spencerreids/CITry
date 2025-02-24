@@ -2,22 +2,21 @@
 
 name: CI
 
-# Controls when the workflow will run
+
 on: [push]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  # This workflow contains a single job called "build"
+
   build:
-    # The type of runner that the job will run on
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
+    steps:
+
+      - uses: actions/checkout@v4
+# javac -d bin -cp bin/*:lib/junit-platform-console-standalone-1.11.4.jar test/range/ToStringTest.java
       - name: CI test
         run: |
           echo Hello, Starting CI test
@@ -32,7 +31,8 @@ jobs:
           javac -d bin/ -cp lib/jfree.jar:lib/serverlet.jar src/org/jfree/data/Range.java
           ls bin
           java -version
-          javac -d bin -cp bin/*:lib/junit-platform-console-standalone-1.11.4.jar test/range/ToStringTest.java
+          javac -d bin -cp bin/*:lib/* test/range/ToStringTest.java
+          
           ls bin
           
            
