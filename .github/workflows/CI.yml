@@ -31,7 +31,7 @@ jobs:
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.11.4.jar $(find src/ -name "*.java")
           javac -d bin/ src/*
            
-          ls bin
+          ls bin/src
 
 
 
