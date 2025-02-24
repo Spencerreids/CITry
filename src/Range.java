@@ -57,7 +57,6 @@
  * 
  */
 
-package org.jfree.data;
 
 import java.io.Serializable;
 import java.security.InvalidParameterException;
