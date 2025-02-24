@@ -1,20 +1,10 @@
 # This is a basic workflow to help you get started with Actions
-
 name: CI
-
-
 on: [push]
-
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
-
     steps:
-
       - uses: actions/checkout@v4
 # javac -d bin -cp bin/*:lib/junit-platform-console-standalone-1.11.4.jar test/range/ToStringTest.java
       - name: CI test
@@ -31,13 +21,6 @@ jobs:
           javac -d bin/ -cp lib/jfree.jar:lib/serverlet.jar src/org/jfree/data/Range.java
           ls bin
           java -version
-          javac -d bin -cp bin/*:lib/* test/range/ToStringTest.java
-          
+          javac -d bin -cp bin:lib test/range/ToStringTest.java
           ls bin
-          
-           
           java -jar lib/junit-platform-console-standalone-1.11.4.jar -class-path bin --scan-class-path 
-
-
-
-
