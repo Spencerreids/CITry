@@ -1,0 +1,5 @@
+﻿Low,High,Comments
+0,-1,"If this is the only error, issues arise with lower bound=0"
+-0.01,0,This one handles small errors around 0
+5,4,Typical Fail Case
+16,6,Typical Fail Case

@@ -1,0 +1,5 @@
+﻿Low,High,Comments
+3,3,In theory identical low and high range is perfectly valid
+-20,10,Testing that negative numbers regardless of absolute scale is valid
+-4,20,Typical Negative value case
+-4,0,How do negative values compare aginst 0

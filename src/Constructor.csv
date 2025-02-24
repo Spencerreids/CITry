@@ -1,0 +1,9 @@
+﻿Error?,Low,High,Comments
+TRUE,0,-1,"If this is the only error, issues arise with lower bound=0"
+TRUE,-0.01,0,This one handles small errors around 0
+FALSE,3,3,In theory identical low and high range is perfectly valid
+FALSE,-20,10,Testing that negative numbers regardless of absolute scale is valid
+FALSE,-4,20,Typical Negative value case
+FALSE,-4,0,How do negative values compare aginst 0
+TRUE,5,4,Typical Fail Case
+TRUE,16,6,Typical Fail Case

@@ -1,0 +1,8 @@
+﻿Lower,Higher,Expected,Comments
+1,5,5,Typical Case
+5,5,5,Small Range
+-5,5,5,
+0,10,10,Handling with 0
+-10,0,0,Negative case with 0
+-20,-10,-10,Full Negative Case
+-30,40,40,"Overall, it seems that this is an unintentional clone of getLowerBound"
