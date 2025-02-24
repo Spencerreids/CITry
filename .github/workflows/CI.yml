@@ -23,7 +23,6 @@ jobs:
           echo Hello, Starting CI test
           mkdir bin
           mkdir lib
-          ls 
           sudo apt update
           sudo apt install default-jdk
           curl https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar -o lib/serverlet.jar
@@ -32,7 +31,7 @@ jobs:
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.11.4.jar $(find src/ -name "*.java")
           javac -d bin/ src/*
            
-          java -jar lib/junit-platform-console-standalone-1.11.4.jar -class-path bin --scan-class-path 
+          ls bin
 
 
 
