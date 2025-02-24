@@ -57,8 +57,7 @@
  * 
  */
 
-package org.jfree.data;
-
+package src;
 import java.io.Serializable;
 
 /**
