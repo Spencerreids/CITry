@@ -30,6 +30,7 @@ jobs:
           curl https://repo1.maven.org/maven2/jfree/jfreechart/1.0.13/jfreechart-1.0.13.jar -o lib/jfreechart
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar -o lib/junit-platform-console-standalone-1.11.4.jar 
           javac -d bin/ src/Range.java
+          ls bin
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.11.4.jar test/ToStringTest.java
           ls bin
           
