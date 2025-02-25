@@ -16,12 +16,10 @@ jobs:
           sudo apt install default-jdk
           curl https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar -o lib/serverlet.jar
           curl https://repo1.maven.org/maven2/org/jfree/jcommon/1.0.17/jcommon-1.0.17.jar -o lib/jfree.jar
-          curl https://repo1.maven.org/maven2/jfree/jfreechart/1.0.13/jfreechart-1.0.13.jar -o lib/jfreechart
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar -o lib/junit-platform-console-standalone-1.11.4.jar 
-          javac -d bin/ -cp lib/jfree.jar:lib/serverlet.jar src/org/jfree/data/Range.java
+          javac -d bin/ -cp lib/jfree.jar:lib/serverlet.jar  src/org/jfree/data/Range.java
           ls bin/org/jfree/data
           java -version
-          javac -d bin -cp bin/org/jfree/data/Range.java:lib/junit-platform-console-standalone-1.11.4.jar test/range/ToStringTest.java
-          
+          javac -d bin -cp bin:lib/junit-platform-console-standalone-1.11.4.jar $(find test/range -name "*.java")           
           ls bin
           java -jar lib/junit-platform-console-standalone-1.11.4.jar -class-path bin --scan-class-path 
