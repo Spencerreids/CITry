@@ -31,25 +31,22 @@ class ExpandTest {
 	
 	@Test
 	void typicalUse() {
-		assertAll(
-				() -> assertEquals(new Range(-10,20), Range.expand(starting, 1, 1), "Simple 100% in both directions"),
-				() -> assertEquals(new Range(0,15), Range.expand(starting, 0, .5), "First value 0"),
-				() -> assertEquals(new Range(-3,10), Range.expand(starting, .3, 0), "Second value 0"),
-				() -> assertEquals(new Range(-30,40), Range.expand(starting, 3, 3), "Values larger than 100%"),
-				() -> assertEquals(starting, Range.expand(starting, 0, 0), "In theory no expansions should occur")
-				);
-	}
-	
-	// Behavior for negative numbers unspecified, Assumptions made
-	@Test
-	void negativeExpansion() {
-		assertAll(
-				() -> assertEquals(new Range(0,5), Range.expand(starting, 0, -.5), "No restriction on the supplied values, One would think this implies shrinkage."),
-				() -> assertEquals(new Range(5,10), Range.expand(starting, -.5, 0 ), "No restriction on the supplied values, One would think this implies shrinkage."),
-				() -> assertEquals(new Range(1,10), Range.expand(starting, -5, 0 ), "No clue how this would handle a larger negative number"),
-				() -> assertThrows(RuntimeException.class, ()->Range.expand(starting, -.6, -.6))
+		assertEquals(new Range(-10,20), Range.expand(starting, 1, 1), "Simple 100% in both directions");
+		assertEquals(new Range(0,15), Range.expand(starting, 0, .5), "First value 0");
+		assertEquals(new Range(-3,10), Range.expand(starting, .3, 0), "Second value 0");
+		assertEquals(new Range(-30,40), Range.expand(starting, 3, 3), "Values larger than 100%");
+		assertEquals(starting, Range.expand(starting, 0, 0), "In theory no expansions should occur");
+
+}
+
+// Behavior for negative numbers unspecified, Assumptions made
+@Test
+void negativeExpansion() {
+		assertEquals(new Range(0,5), Range.expand(starting, 0, -.5), "No restriction on the supplied values, One would think this implies shrinkage.");
+		assertEquals(new Range(5,10), Range.expand(starting, -.5, 0 ), "No restriction on the supplied values, One would think this implies shrinkage.");
+		assertEquals(new Range(1,10), Range.expand(starting, -5, 0 ), "No clue how this would handle a larger negative number");
+		assertThrows(RuntimeException.class, ()->Range.expand(starting, -.6, -.6));
 				
-				);
 	}
 	
 	

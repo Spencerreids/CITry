@@ -22,15 +22,13 @@ class IntersectsTest {
 
 	@Test
 	void typicalUse() {
-		assertAll(
-				() -> assertTrue(Given.intersects(5, 6), "Range contains supplied range entirely"),
-				() -> assertTrue(Given.intersects(0,15), "Range Intersects above"),
-				() -> assertTrue(Given.intersects(-40,40),"Range is contained by supplied range"),
-				() -> assertTrue(Given.intersects(-20,-9) , "Range intersects below"),
-				() -> assertFalse(Given.intersects(13, 17), "Range is entirely smaller than supplied range"),
-				() -> assertFalse(Given.intersects(-23, -17), "Range is entirely larger than supplied range"),
-				() -> assertTrue(Given.intersects(5,5), "Range Intersects a single point range")
-				);
+		assertTrue(Given.intersects(5, 6), "Range contains supplied range entirely");
+		assertTrue(Given.intersects(0,15), "Range Intersects above");
+		assertTrue(Given.intersects(-40,40),"Range is contained by supplied range");
+		assertTrue(Given.intersects(-20,-9) , "Range intersects below");
+		assertFalse(Given.intersects(13, 17), "Range is entirely smaller than supplied range");
+		assertFalse(Given.intersects(-23, -17), "Range is entirely larger than supplied range");
+		assertTrue(Given.intersects(5,5), "Range Intersects a single point range");
 	}
 	
 	@Test
