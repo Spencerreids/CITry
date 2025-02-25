@@ -47,7 +47,7 @@ class ExpandTest {
 				() -> assertEquals(new Range(0,5), Range.expand(starting, 0, -.5), "No restriction on the supplied values, One would think this implies shrinkage."),
 				() -> assertEquals(new Range(5,10), Range.expand(starting, -.5, 0 ), "No restriction on the supplied values, One would think this implies shrinkage."),
 				() -> assertEquals(new Range(1,10), Range.expand(starting, -5, 0 ), "No clue how this would handle a larger negative number"),
-				() -> assertThrows(RuntimeException.class, ()->Range.expand(starting, -.6, -.6), "Presupposing that the value does shrink, this should throw an error creating an invalid range")
+				() -> assertThrows(RuntimeException.class, ()->Range.expand(starting, -.6, -.6))
 				
 				);
 	}

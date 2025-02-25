@@ -33,6 +33,7 @@ class EqualsTest {
 	void SecondIntendedFail() {
 		Range test = new Range(0,5);
 		assertFalse(test.equals(new Range(4,9)));
+		assertFalse(test.equals(new Range(0,9)));
 	}
 	
 	@Test

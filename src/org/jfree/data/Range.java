@@ -154,7 +154,7 @@ public strictfp class Range implements Serializable {
             return (upper > this.lower);
         }
         else {
-            return (upper < this.upper && upper >= lower);
+            return (lower < this.upper && upper >= lower);
             //return (upper < this.upper && upper >= lower);
         }
     }
@@ -203,11 +203,13 @@ public strictfp class Range implements Serializable {
         }
         else {
             if (range2 == null) {
-                return range2;
+                return range1;
             }
             else {
                 double l = Math.min(range1.getLowerBound(), 
                         range2.getLowerBound());
+                System.out.println("lower=" + l);
+                System.out.println("Made from" + range1.getLowerBound() + "and" + range2.getLowerBound());
                 double u = Math.max(range1.getUpperBound(), 
                         range2.getUpperBound());
                 return new Range(l, u);
@@ -254,7 +256,7 @@ public strictfp class Range implements Serializable {
     public static Range expand(Range range, 
                                double lowerMargin, double upperMargin) {
         if (range == null) {
-            throw new IllegalArgumentException("Null 'range' argument.");   
+            throw new InvalidParameterException("Null 'range' argument.");   
         }
         double length = range.getLength();
         double lower = length * lowerMargin;
@@ -293,9 +295,9 @@ public strictfp class Range implements Serializable {
      */
     public static Range shift(Range base, double delta, 
                               boolean allowZeroCrossing) {
-//    	if (base == null) {
-//    		throw new InvalidParameterException("can't be null");
-//    	}
+    	if (base == null) {
+    		throw new InvalidParameterException("can't be null");
+    	}
         if (allowZeroCrossing) {
             return new Range(base.getLowerBound() + delta, 
                     base.getUpperBound() + delta);
@@ -344,7 +346,7 @@ public strictfp class Range implements Serializable {
             return false;
         }
         if (!(this.upper == range.upper)) {
-            return true;
+            return false;
         }
         return true;
     }
